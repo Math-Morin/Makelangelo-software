@@ -68,7 +68,7 @@ public class TurtleGeneratorTest {
 
 
     @Test
-    public void testTransform() {
+    public void testDup() {
         Generator_Polyeder.Transform transform = new Generator_Polyeder.Transform();
         Point2D pt = new Point2D(10, 20);
         transform.walk(pt);

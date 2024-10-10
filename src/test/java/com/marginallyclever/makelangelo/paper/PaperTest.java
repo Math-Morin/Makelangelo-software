@@ -68,13 +68,33 @@ public class PaperTest {
     Assertions.assertEquals(1, a.getPaperMargin());
   }
 
-  @Test 
-  public void testPaperLimits() {
+  @Test
+  public void testPaperLeft() {
     Paper a = new Paper();
-    a.setPaperSize(200,100,0,0); 
+    a.setPaperSize(200,100,0,0);
     Assertions.assertEquals(a.getPaperLeft(),-100);
+  }
+
+  @Test
+  public void testPaperRight() {
+    Paper a = new Paper();
+    a.setPaperSize(200,100,0,0);
     Assertions.assertEquals(a.getPaperRight(),100);
+  }
+
+  @Test 
+  public void testPaperTop() {
+    Paper a = new Paper();
+    a.setPaperSize(200,100,0,0);
     Assertions.assertEquals(a.getPaperTop(),50);
+  } 
+
+  @Test 
+  public void testPaperBottom() {
+    Paper a = new Paper();
+    a.setPaperSize(200,100,0,0);
     Assertions.assertEquals(a.getPaperBottom(),-50);
   }
+
+
 }

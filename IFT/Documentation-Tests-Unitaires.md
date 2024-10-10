@@ -116,3 +116,54 @@ Ce test vérifie que la fonction setX() change bien la coordonnée en x pour la 
 Ce test vérifie que la fonction setY() change bien la coordonnée en y pour la valeur donnée.
 <img src="images/setY-Before.png">
 <img src="images/setY-After.png">
+
+#### Test 16 - LineSegment2DToString()
+Ce test vérifie que la fonction toString() implémentée dans la classe
+LineSegment2D retourne bien la bonne valeur.
+
+<img src="./images 2/Screenshot 2024-10-10 at 1.15.13 PM.png">
+
+#### Test 17 - testPaperLeft()
+Ce test vérifie que la fonction getPaperLeft() retourne bien la bonne valeur. 
+<img src="./images 2/Screenshot 2024-10-10 at 1.21.52 PM.png">
+
+
+#### Test 18 - testPaperRight() 
+Ce test vérifie que la fonction getPaperRight() retourne bien la bonne valeur.
+<img src="./images 2/Screenshot 2024-10-10 at 1.33.20 PM.png">
+
+
+#### Test 19 - testPaperTop()
+Ce test vérifie que la fonction getPaperTop() retourne bien la bonne valeur.
+<img src="./images 2/Screenshot 2024-10-10 at 1.21.57 PM.png">
+#### Test 20 - testPaperBottom()
+Ce test vérifie que la fonction getPaperBottom() retourne bien la bonne valeur.
+<img src="./images 2/Screenshot 2024-10-10 at 1.22.01 PM.png">
+#### Test 21 - testMargins()
+Ce test vérifie que la fonction getPaperMargin() retourne bien la bonne valeur.
+<img src="./images 2/Screenshot 2024-10-10 at 1.22.06 PM.png">
+
+#### Test 22 - testTrans()
+Ce test vérifie que la fonction trans de la classe Generator_Polyeder
+retourne bien la bonne valeur.
+
+<img src="./images 2/Screenshot 2024-10-10 at 1.06.36 PM.png">
+#### Test 23 - testWalk()
+Ce test vérifie que la fonction walk de la classe Generator_Polyeder 
+retourne bien la bonne valeur.
+<img src="./images 2/Screenshot 2024-10-10 at 1.06.45 PM.png">
+
+#### Test 24 - testRotate() 
+Ce test vérifie que la fonction rotate de la classe Generator_Polyeder
+retourne bien la bonne valeur.
+
+<img src="./images 2/Screenshot 2024-10-10 at 1.06.25 PM.png">
+
+#### Test 25 - testDup()
+Ce test vérifie que la fonction dup de la classe Generator_Polyeder 
+retourne bien la bonne valeur. 
+
+<img src="./images 2/Screenshot 2024-10-10 at 1.06.56 PM.png">
+
+
+
