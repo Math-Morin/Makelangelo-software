@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
 import java.util.List;
+import java.util.Objects;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -283,5 +284,92 @@ class TurtleTest {
         for(int i=0;i<=10;++i) {
             assertTrue(new Point2D(i * 100, 0).distance(turtle.interpolate(d*(double)i/10.0)) < EPSILON);
         }
+    }
+
+    /*
+    Ce test vérifie que le constructeur de copie produit bien un objet Turtle considéré égal a celui passé en paramètre.
+     */
+    @Test
+    public void turtleCopyConstructor() {
+        Turtle initialTurtle = new Turtle();
+        Color initialColor = Color.BLUE;
+        double initialAngle = 12.3;
+        double initialDiameter = 2.0;
+        initialTurtle.setColor(initialColor);
+        initialTurtle.setAngle(initialAngle);
+        initialTurtle.setDiameter(initialDiameter);
+
+        Turtle turtleCopy = new Turtle(initialTurtle);
+
+        assertEquals(initialTurtle, turtleCopy);
+    }
+
+    /*
+    Ce test vérifie que la fonction lock() vérouille bien la tortue.
+     */
+    @Test
+    public void Lock() {
+        Turtle turtle = new Turtle();
+        boolean initialStateIsLocked = turtle.isLocked();
+
+        turtle.lock();
+
+        assertFalse(initialStateIsLocked);
+        assertTrue(turtle.isLocked());
+    }
+
+    /*
+    Ce test vérifie que la fonction unlock() dévérouille bien la tortue.
+     */
+    @Test
+    public void Unlock() {
+        Turtle turtle = new Turtle();
+        turtle.lock();
+        boolean initialStateIsLocked = turtle.isLocked();
+
+        turtle.unlock();
+
+        assertTrue(initialStateIsLocked);
+        assertFalse(turtle.isLocked());
+    }
+
+    /*
+    Ce test vérifie que la fonction getDiameter() retourne bien la bonne valeur.
+     */
+    @Test
+    public void getDiameter() {
+        Turtle turtle = new Turtle();
+        double expectedDiameter = 3.4;
+        turtle.setDiameter(expectedDiameter);
+
+        double result = turtle.getDiameter();
+
+        assertEquals(expectedDiameter, result);
+    }
+
+    /*
+    Ce test vérifie que la fonction setX() change bien la coordonnée en x pour la valeur donnée.
+     */
+    @Test
+    public void setX() {
+        Turtle turtle = new Turtle();
+        double newX = 1.2;
+
+        turtle.setX(newX);
+
+        assertEquals(newX, turtle.getX());
+    }
+
+    /*
+    Ce test vérifie que la fonction setY() change bien la coordonnée en y pour la valeur donnée.
+     */
+    @Test
+    public void setY() {
+        Turtle turtle = new Turtle();
+        double newY = 3.4;
+
+        turtle.setY(newY);
+
+        assertEquals(newY, turtle.getY());
     }
 }
