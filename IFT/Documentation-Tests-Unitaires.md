@@ -3,6 +3,13 @@
 Emeric Laberge 20220275
 Mathieu Morin 20163634
 
+## Test Coverage
+Initial : 
+<img src="images/coverage-Before.png">
+
+Final :
+<img src="images/coverage-After.png">
+
 ## Classes TurtleMoveTest et TurtleTest
 Une classe de test TurtleMoveTest a été ajoutée pour tester la classe TurtleMove, dont la couverture pouvait etre améliorée.
 La classe TurtleTest existait déjà. Ces classes ont été choisies, car nous sommes familier avec le concept de tortue (IFT-1015),
