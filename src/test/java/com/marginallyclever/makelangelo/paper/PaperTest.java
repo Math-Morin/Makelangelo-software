@@ -58,43 +58,48 @@ public class PaperTest {
 		Assertions.assertEquals(100,a.getCenterY());
 	}
 
-  @Test 
-  public void testMargins() {
+// Teste la gestion des marges sur le papier
+@Test 
+public void testMargins() {
     Paper a = new Paper();
     a.setPaperSize(200,100,0,0);
     a.setPaperMargin(-0.1);
     Assertions.assertEquals(0, a.getPaperMargin());
     a.setPaperMargin(2);
     Assertions.assertEquals(1, a.getPaperMargin());
-  }
+}
 
-  @Test
-  public void testPaperLeft() {
+// Vérifie la position gauche du papier
+@Test
+public void testPaperLeft() {
     Paper a = new Paper();
     a.setPaperSize(200,100,0,0);
-    Assertions.assertEquals(a.getPaperLeft(),-100);
-  }
+    Assertions.assertEquals(a.getPaperLeft(), -100);
+}
 
-  @Test
-  public void testPaperRight() {
+// Vérifie la position droite du papier
+@Test
+public void testPaperRight() {
     Paper a = new Paper();
     a.setPaperSize(200,100,0,0);
-    Assertions.assertEquals(a.getPaperRight(),100);
-  }
+    Assertions.assertEquals(a.getPaperRight(), 100);
+}
 
-  @Test 
-  public void testPaperTop() {
+// Vérifie la position supérieure du papier
+@Test 
+public void testPaperTop() {
     Paper a = new Paper();
     a.setPaperSize(200,100,0,0);
-    Assertions.assertEquals(a.getPaperTop(),50);
-  } 
+    Assertions.assertEquals(a.getPaperTop(), 50);
+} 
 
-  @Test 
-  public void testPaperBottom() {
+// Vérifie la position inférieure du papier
+@Test 
+public void testPaperBottom() {
     Paper a = new Paper();
     a.setPaperSize(200,100,0,0);
-    Assertions.assertEquals(a.getPaperBottom(),-50);
-  }
+    Assertions.assertEquals(a.getPaperBottom(), -50);
+}
 
 
 }

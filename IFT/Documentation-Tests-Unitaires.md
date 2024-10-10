@@ -117,53 +117,73 @@ Ce test vérifie que la fonction setY() change bien la coordonnée en y pour la 
 <img src="images/setY-Before.png">
 <img src="images/setY-After.png">
 
+## Classe LineSegment2D
+
 #### Test 16 - LineSegment2DToString()
 Ce test vérifie que la fonction toString() implémentée dans la classe
 LineSegment2D retourne bien la bonne valeur.
 
+<img src="./images 2/Screenshot 2024-10-10 at 1.44.06 PM.png">
 <img src="./images 2/Screenshot 2024-10-10 at 1.15.13 PM.png">
+
+## Classe Paper
 
 #### Test 17 - testPaperLeft()
 Ce test vérifie que la fonction getPaperLeft() retourne bien la bonne valeur. 
+<img src="./images 2/Screenshot 2024-10-10 at 1.41.42 PM.png">
 <img src="./images 2/Screenshot 2024-10-10 at 1.21.52 PM.png">
 
 
 #### Test 18 - testPaperRight() 
 Ce test vérifie que la fonction getPaperRight() retourne bien la bonne valeur.
+<img src="./images 2/Screenshot 2024-10-10 at 1.41.46 PM.png">
 <img src="./images 2/Screenshot 2024-10-10 at 1.33.20 PM.png">
 
 
 #### Test 19 - testPaperTop()
 Ce test vérifie que la fonction getPaperTop() retourne bien la bonne valeur.
+<img src="./images 2/Screenshot 2024-10-10 at 1.41.51 PM.png">
 <img src="./images 2/Screenshot 2024-10-10 at 1.21.57 PM.png">
+
 #### Test 20 - testPaperBottom()
 Ce test vérifie que la fonction getPaperBottom() retourne bien la bonne valeur.
+
+<img src="./images 2/Screenshot 2024-10-10 at 1.41.55 PM.png">
 <img src="./images 2/Screenshot 2024-10-10 at 1.22.01 PM.png">
+
 #### Test 21 - testMargins()
-Ce test vérifie que la fonction getPaperMargin() retourne bien la bonne valeur.
-<img src="./images 2/Screenshot 2024-10-10 at 1.22.06 PM.png">
+ce test verifie que la fonction setPaperMargin() retourne 0 si la marge est inférieure à 0 et 1 si la marge est supérieure à 1.
+
+
+<img src="./images 2/Screenshot 2024-10-10 at 1.43.19 PM.png">
+<img src="./images 2/Screenshot 2024-10-10 at 2.00.30 PM.png">
+
+## Classe Generator_Polyeder.Transform
 
 #### Test 22 - testTrans()
 Ce test vérifie que la fonction trans de la classe Generator_Polyeder
 retourne bien la bonne valeur.
 
+<img src="./images 2/Screenshot 2024-10-10 at 1.44.56 PM.png">
 <img src="./images 2/Screenshot 2024-10-10 at 1.06.36 PM.png">
+
 #### Test 23 - testWalk()
+
 Ce test vérifie que la fonction walk de la classe Generator_Polyeder 
 retourne bien la bonne valeur.
+
+<img src="./images 2/Screenshot 2024-10-10 at 1.45.01 PM.png">
 <img src="./images 2/Screenshot 2024-10-10 at 1.06.45 PM.png">
 
 #### Test 24 - testRotate() 
 Ce test vérifie que la fonction rotate de la classe Generator_Polyeder
-retourne bien la bonne valeur.
-
+retourne bien la bonne valeur après avoir effectué une rotation.
+<img src="./images 2/Screenshot 2024-10-10 at 1.44.45 PM.png">
 <img src="./images 2/Screenshot 2024-10-10 at 1.06.25 PM.png">
 
 #### Test 25 - testDup()
-Ce test vérifie que la fonction dup de la classe Generator_Polyeder 
-retourne bien la bonne valeur. 
+Ce test vérifie que la fonction dup de la classe Generator_Polyeder duplique bien l'objet.
 
+
+<img src="./images 2/Screenshot 2024-10-10 at 1.45.08 PM.png">
 <img src="./images 2/Screenshot 2024-10-10 at 1.06.56 PM.png">
-
-
-

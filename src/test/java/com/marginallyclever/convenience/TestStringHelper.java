@@ -17,6 +17,8 @@ public class TestStringHelper {
         assertEquals("100000",StringHelper.paddedHex(0x100000));
     }
 
+  // Teste que la méthode toString de la classe Point2D retourne bel et bien le
+  // bon format.
   @Test 
   public void LineSegment2DToString(){
     final Point2D start = new Point2D(0.0,0.0);
