@@ -4,10 +4,10 @@ Emeric Laberge 20220275
 Mathieu Morin 20163634
 
 ## Test Coverage
-Initial : 
+Initial : <br>
 <img src="images/coverage-Before.png">
 
-Final :
+Final : <br>
 <img src="images/coverage-After.png">
 
 ## Classes TurtleMoveTest et TurtleTest
