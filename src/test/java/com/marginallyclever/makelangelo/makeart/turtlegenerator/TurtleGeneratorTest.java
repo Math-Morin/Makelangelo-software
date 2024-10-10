@@ -35,6 +35,7 @@ public class TurtleGeneratorTest {
         }
     }
 
+// Teste la transformation d'un point avec la méthode trans()
     @Test 
     public void testTrans() {
         Generator_Polyeder.Transform transform = new Generator_Polyeder.Transform();
@@ -42,8 +43,9 @@ public class TurtleGeneratorTest {
         Point2D ptTrans = transform.trans(pt);
         assertEquals(pt.x, ptTrans.x, 0.001);
         assertEquals(pt.y, ptTrans.y, 0.001);
-  }
+    }
 
+    // Teste la méthode walk() pour déplacer l'origine de la transformation
     @Test
     public void testWalk() {
         Generator_Polyeder.Transform transform = new Generator_Polyeder.Transform();
@@ -55,6 +57,7 @@ public class TurtleGeneratorTest {
         transform.dump();
     }
 
+    // Teste la rotation de la transformation avec un angle donné
     @Test
     public void testRotate() {
         Generator_Polyeder.Transform transform = new Generator_Polyeder.Transform();
@@ -66,7 +69,7 @@ public class TurtleGeneratorTest {
         transform.dump();
     }
 
-
+    // Teste la duplication d'une transformation et vérifie que les valeurs sont identiques
     @Test
     public void testDup() {
         Generator_Polyeder.Transform transform = new Generator_Polyeder.Transform();
