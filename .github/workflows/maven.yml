@@ -14,14 +14,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        jvm_flag:
-          - "-XX:+UnlockDiagnosticVMOptions -XX:+PrintFlagsFinal"
-          - "-XX:+UseG1GC"
-          - "-XX:+UseParallelGC"
-          - "-XX:+UseZGC"
-          - "-XX:+ExtendedDTraceProbes"
     steps:
     - uses: actions/checkout@v4
 
@@ -32,11 +24,14 @@ jobs:
         cache: 'maven'
 
     - name: Set up JVM Options
-      run: echo "MAVEN_OPTS=${{ matrix.jvm_flag }}" >> $GITHUB_ENV
+      run: echo "MAVEN_OPTS=-Xmx512m -XX:+UseG1GC -XX:+HeapDumpOnOutOfMemoryError" >> $GITHUB_ENV
     # from https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
     - name: Build and Test with Maven
       timeout-minutes: 15
       run: ./mvnw -B test -Djava.awt.headless=true
+
+    - name: Print JVM Flags
+      run: java -XX:+PrintFlagsFinal -version
 
     - name: Package with Maven
       run: ./mvnw -B clean package -DskipTests

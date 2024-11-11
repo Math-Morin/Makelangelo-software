@@ -16,9 +16,15 @@ jobs:
         java-version: '17'
         cache: 'maven'
 
+    - name: Set up JVM Options
+      run: echo "MAVEN_OPTS=-Xmx512m -XX:+UseG1GC -XX:+HeapDumpOnOutOfMemoryError" >> $GITHUB_ENV
+
     - name: Build and Test with Maven
       timeout-minutes: 15
       run: ./mvnw -B verify
+
+    - name: Print JVM Flags
+      run: java -XX:+PrintFlagsFinal -version
 
     - name: Get JaCoCo Coverage
       id: coverage  
