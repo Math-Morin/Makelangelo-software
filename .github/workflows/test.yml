@@ -7,6 +7,14 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        jvm-flags:
+          - "-XX:+UseG1GC"
+          - "-XX:+UseParallelGC"
+          - "-XX:+UseZGC"
+          - "-Xmx512m"
+          - "-XX:+HeapDumpOnOutOfMemoryError"
     steps:
     - uses: actions/checkout@v4
 
@@ -17,7 +25,8 @@ jobs:
         cache: 'maven'
 
     - name: Set up JVM Options
-      run: echo "MAVEN_OPTS=-Xmx512m -XX:+UseG1GC -XX:+HeapDumpOnOutOfMemoryError" >> $GITHUB_ENV
+      run: echo "MAVEN_OPTS=${{ matrix.jvm-flags }}" >> $GITHUB_ENV
+
 
     - name: Build and Test with Maven
       timeout-minutes: 15
