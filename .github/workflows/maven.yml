@@ -14,10 +14,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     strategy:
       matrix:
         jvm-flags:
-
           - "-XX:+UseG1GC"
           - "-XX:+UseParallelGC"
           - "-XX:+UseZGC"
@@ -33,7 +33,7 @@ jobs:
         cache: 'maven'
 
     - name: Set up JVM Options
-      run: echo "MAVEN_OPTS=${{ matrix.jvm_flag }}" >> $GITHUB_ENV
+      run: echo "MAVEN_OPTS=${{ matrix.jvm-flags }}" >> $GITHUB_ENV
     # from https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
     - name: Build and Test with Maven
       timeout-minutes: 15
@@ -92,10 +92,15 @@ jobs:
         asset_content_type: application/zip # required by GitHub API
         max_releases: 1 # optional, if there are more releases than this matching the asset_name, the oldest ones are going to be deleted
 
+    - name: Set Sanitized JVM Flag
+      run: |
+        SANITIZED_JVM_FLAG=$(echo "${{ matrix.jvm-flags }}" | sed 's/[^a-zA-Z0-9]/_/g')
+        echo "SANITIZED_JVM_FLAG=${SANITIZED_JVM_FLAG}" >> $GITHUB_ENV
+
     - name: Upload artifact for package
       uses: actions/upload-artifact@v4.3.3
       with:
-        name: jar
+        name: jar-${{ env.SANITIZED_JVM_FLAG }}
         retention-days: 1
         path: |
           src/main/package/jpackage*
