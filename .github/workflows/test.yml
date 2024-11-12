@@ -10,11 +10,12 @@ jobs:
     strategy:
       matrix:
         jvm-flags:
-          - "-XX:+UseG1GC"
-          - "-XX:+UseParallelGC"
-          - "-XX:+UseZGC"
           - "-Xmx512m"
+          - "-XX:+UseG1GC"
+          - "-XX:+UseStringDeduplication"
+          - "-XX:+UseCompressedOops"
           - "-XX:+HeapDumpOnOutOfMemoryError"
+          - "-XX:+PrintGCDetails"
     steps:
     - uses: actions/checkout@v4
 
