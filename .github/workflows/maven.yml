@@ -42,7 +42,7 @@ jobs:
       run: ./mvnw -B test -Djava.awt.headless=true
 
     - name: Print JVM Flags
-      run: java -XX:+PrintFlagsFinal -version
+      run: 'echo "Current JVM flags : $MAVEN_OPTS"'
 
     - name: Package with Maven
       run: ./mvnw -B clean package -DskipTests

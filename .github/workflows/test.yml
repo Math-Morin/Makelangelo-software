@@ -34,7 +34,7 @@ jobs:
       run: ./mvnw -B verify
 
     - name: Print JVM Flags
-      run: java -XX:+PrintFlagsFinal -version
+      run: 'echo "Current JVM flags : $MAVEN_OPTS"'
 
     - name: Get JaCoCo Coverage
       id: coverage  
