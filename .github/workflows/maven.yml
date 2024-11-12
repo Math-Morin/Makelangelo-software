@@ -14,10 +14,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
-
         jvm-flags:
           - "-Xmx512m"
           - "-XX:+UseG1GC"
